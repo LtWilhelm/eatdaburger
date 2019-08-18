@@ -10,6 +10,9 @@ let burgers = {
     selectAll: function(column, value, callback) {
         orm.selectWhere('burgers', column, value, callback);
     },
+    select: function(callback){
+        orm.select('burgers', callback)
+    },
     update: function(value, id){
         orm.updateWhere('burgers', 'devoured', value, 'id', id);
     },
@@ -17,3 +20,5 @@ let burgers = {
         orm.deleteWhere('burgers', 'id', id);
     }
 }
+
+module.exports = burgers;

@@ -17,7 +17,7 @@ let orm = {
             console.log(res);
         });
     },
-    updateWhere: function(table, columnToSet, valueToSet, column, value, callback){
+    updateWhere: function(table, columnToSet, valueToSet, column, value){
         let queryString = 'update ?? set ?? = ? where ?? = ?';
         connection.query(queryString, [table, columnToSet, valueToSet, column, value], function(err, res){
             if (err) throw err;
@@ -32,6 +32,14 @@ let orm = {
 
             console.log(res);
         })
+    },
+    select: function(table, callback) {
+        let queryString = 'select * from ??';
+        connection.query(queryString, table, function(err, res){
+            if (err) throw err;
+            
+            callback(res);
+        });
     }
 }
 

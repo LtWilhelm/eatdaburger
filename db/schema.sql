@@ -8,5 +8,3 @@ create table burgers (
     devoured bool default false,
     primary key (id)
 );
-
--- drop table burgers_db.burgers;

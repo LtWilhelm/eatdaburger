@@ -5,6 +5,8 @@ use burgers_db;
 create table burgers (
     id int(10) auto_increment not null,
     burger_name varchar(255) not null,
-    devoured tinyint(1),
+    devoured bool default false,
     primary key (id)
 );
+
+-- drop table burgers_db.burgers;
